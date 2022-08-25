@@ -57,7 +57,7 @@ class Database:
 
     def add_user(self, id: int, name: str, language: str = 'uz'):
         sql = """
-        INSERT INTO Users(id, Name, language) VALUES(?, ?, ?)
+        INSERT or IGNORE INTO Users(id, Name, language) VALUES(?, ?, ?)
         """
         self.execute(sql, parameters=(id, name, language), commit=True)
 
@@ -103,7 +103,7 @@ class Database:
     def new_chat(self, id, user, count):
         res = self.count_adding_users(id, isarray=False)
         if res == [] or res == 0:
-            sql = """INSERT INTO inGroup(id, user, count) VALUES(?,?,?)"""
+            sql = """INSERT or IGNORE INTO inGroup(id, user, count) VALUES(?,?,?)"""
             return self.execute(sql, parameters=(id, user, count), commit=True)
         sql = "UPDATE inGroup SET count=? WHERE id=?"
         return self.execute(sql, parameters=(count, id), commit=True)
