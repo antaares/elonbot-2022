@@ -16,15 +16,16 @@
 
 import os
 
-BOT_TOKEN = "5071823258:AAHvI1hSwkmSZTi_pVOz688Nc96b8-bjUr0"
+BOT_TOKEN = "5689174122:AAFPmYUTZgShrRSsPKlH1uDtQ7lNHQ3ETcA"
 
 ADMINS = [1393139047]
-CHANNELS = [-1001726965604] #kanal id raqami
-GHANNEL_LINK = "https://t.me/renta96" # kanal linki
-GROUP = -1001333230070 #guruh id raqami
-GROUP_LINK = "https://t.me/AioTestGroup" # guruh linki
+CHANNELS = [-1001712002655] #kanal id raqami
+GHANNEL_LINK = "https://t.me/elonlartahtasi" # kanal linki
+
+GROUP = -1001548354734 #guruh id raqami
+GROUP_LINK = "https://t.me/elonlartaxtasigroup" # guruh linki
 how_member = 10 # guruhga nechta odam qoshish kerak bolsa shuyerga yoziladi.
 
 
 
-ADMIN_GROUP = '@RESTA97' # admin guruhi
+ADMIN_GROUP = -1001619234889 # admin guruhi
