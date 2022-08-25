@@ -1,7 +1,7 @@
 from aiogram import types
 from aiogram.dispatcher.storage import FSMContext
 
-from data.config import how_member
+from data.config import ADMINS, how_member
 
 from loader import dp, bot, db 
 from keyboards.default.mainMenu import MAIN_MENU
@@ -11,11 +11,11 @@ async def checkCount(query: types.CallbackQuery, state: FSMContext):
     MSG = query.message
     id = query.from_user.id
     count = db.count_adding_users(id=id)
-    if count == 0:
+    if count == 0 and id not in ADMINS:
         text = f"Iltimos botdan to‘liq foydalanish uchun guruhimizga kamida {how_member} ta odam qo‘shgan bo‘lishingiz shart!!!"
         await query.answer(text=text, show_alert=True, cache_time=0)
         return
-    elif count < how_member:
+    elif count < how_member and id not in ADMINS:
         text = f"ILtimos botdan to‘liq foydalanish uchun guruhimizga yana {how_member-count} ta odam qo‘shishingiz kerak!!!"
         await query.answer(text=text, show_alert=True, cache_time=0)
         return
