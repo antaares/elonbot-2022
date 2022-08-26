@@ -26,7 +26,7 @@ async def CallBackReceive(query: types.CallbackQuery, state: FSMContext):
     if data.startswith("confirm"):
         admin_id = query.from_user.id
         admin_name = query.from_user.full_name
-        txt = f"Sizning arizangiz qabul qilindi va tez orada kanalga joylanadi. https://t.me/AioBotTest"
+        txt = f"Sizning arizangiz qabul qilindi va tez orada kanalga joylanadi. https://t.me/elonlartahtasi"
         await bot.send_message(chat_id=int(user), text=txt)
         await query.message.edit_reply_markup(
             reply_markup= await info_admins(name=admin_name, admin_id=admin_id, hint=True)
