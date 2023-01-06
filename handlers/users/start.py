@@ -7,7 +7,6 @@ from keyboards.inline.to_group import BUTTON_TO_GROUP
 from loader import dp, db, bot
 
 from keyboards.inline.startButtons import SUBSCRIBE
-#from utils.ErrorCoder import error_to_coder
 
 from data.config import how_member
 
@@ -22,7 +21,7 @@ async def bot_start(message: types.Message):
             language=message.from_user.language_code
             )
     except Exception as error:
-       print(error)# error_to_coder(error)
+       print(error)
 
 @dp.message_handler(IsPrivate(), CommandStart(), state="*")
 async def bot_start(message: types.Message):
